@@ -1,4 +1,4 @@
-//
+  //
 //  MainTabbarViewController.swift
 //  LearnSwift
 //
@@ -12,19 +12,21 @@ class MainTabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.endEditing(true)
+    }
+   
+    deinit {
+        print("我被销毁了")
+        
+    }
 
 }
