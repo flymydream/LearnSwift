@@ -1,5 +1,5 @@
 //
-//  HodeModel.swift
+//  AllIMageModel.swift
 //  LearnSwift
 //
 //  Created by 庞宏侠 on 2020/7/30.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class HodeModel: NSObject {
+class AllIMageModel: NSObject {
 
 }

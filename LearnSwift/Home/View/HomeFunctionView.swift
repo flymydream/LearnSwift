@@ -16,14 +16,13 @@ import UIKit
 
 
 class HomeFunctionView: UIView {
-    var delegate : HomeFunctionViewDelegate
+    var delegate : HomeFunctionViewDelegate?
     let imageArr = ["home_icon_xuefu__nor","home_icon_agency_nor","home_icon_course_nor","home_icon_course_nor"]
     let titleArr = ["学府正声","机构导览","在线课程","艺学咨询"]
     
-    
-    override init(frame: CGRect) {
+     override init(frame: CGRect) {
         super.init(frame: frame)
-    
+           initTiaLiseUI()
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +58,7 @@ class HomeFunctionView: UIView {
     }
     
     @objc func tapClickButton(currentIndex:NSInteger) {
-        self.delegate.HomeFunctionClick?(view: self, index: currentIndex)
+        self.delegate?.HomeFunctionClick?(view: self, index: currentIndex)
     }
     
     
