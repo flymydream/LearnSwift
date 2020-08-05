@@ -29,15 +29,16 @@ class HomeHeaderView: UIView,SDCycleScrollViewDelegate,HomeFunctionViewDelegate 
     var delegate:HomeHeaderViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initialiseUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+    //数据绑定
     var model : HomeModel {
-        didSet{
+        didSet {
+            let  
             
             
             
