@@ -7,6 +7,7 @@ pod 'SDCycleScrollView'
 pod 'lottie-ios'
 pod 'SnapKit'
 pod 'MJRefresh'
+pod 'Moya'
 
 target 'LearnSwift' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

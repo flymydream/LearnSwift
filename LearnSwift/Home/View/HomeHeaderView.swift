@@ -29,13 +29,20 @@ class HomeHeaderView: UIView,SDCycleScrollViewDelegate,HomeFunctionViewDelegate 
         super.init(frame: frame)
         initialiseUI()
     }
+    
+    
+    func getRequestData() {
+        let url : String = "api/index/index"
+        TSNetworkRequest 
+        
+    }
        
     //数据绑定
      var model : HomeModel {
          didSet {
              let imageArr = NSMutableArray()
              let arr:Array<AllIMageModel> = model.bannersModel!.banner_imgs_change!
-             for index in 0..< arr.count {
+            for index in 0..< arr.count {
                  let bannerModel : AllIMageModel = arr[index]
                  let image_url : String = kImage_Url+bannerModel.image
                  imageArr.add(image_url)

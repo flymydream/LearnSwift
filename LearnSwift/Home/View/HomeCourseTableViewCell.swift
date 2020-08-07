@@ -75,14 +75,20 @@ class HomeCourseTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollec
         
         let aCell : HomeCourseCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: courseCollectionCell, for: indexPath) as! HomeCourseCollectionViewCell
         if type == 1 { //推荐机构
-            aCell.mo
+             aCell.model = self.homeModel?.institutions?[indexPath.row]
+        } else if type == 2{
+            aCell.setPassData(model: (self.homeModel?.lessons?[indexPath.row])!)
+        } else {
+            aCell.setPassCourseData(model:(self.courseModel?.lessons_hot?[indexPath.row])!)
         }
-        
-        
+        aCell.backgroundColor = UIColor.white
+        return aCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let model : HomeInstitutionsModel = (self.homeModel?.institutions?[indexPath.row])!
+        self.delegate?.didSelectItemAt(institutionId: model.id ?? "0")
+    
     }
     
     

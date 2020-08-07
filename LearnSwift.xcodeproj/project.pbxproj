@@ -25,6 +25,8 @@
 		3131876024D2BB7300843AE4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3131875F24D2BB7300843AE4 /* ProfileViewController.swift */; };
 		3131876324D2D46700843AE4 /* lottie (3).json in Resources */ = {isa = PBXBuildFile; fileRef = 3131876224D2D46700843AE4 /* lottie (3).json */; };
 		3131876524D2DA5100843AE4 /* AllIMageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3131876424D2DA5100843AE4 /* AllIMageModel.swift */; };
+		31799C2124DD4B52007A73C7 /* CourseHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799C2024DD4B52007A73C7 /* CourseHomeViewController.swift */; };
+		31799C2324DD4B81007A73C7 /* ComminityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799C2224DD4B81007A73C7 /* ComminityViewController.swift */; };
 		31AC7AE624CE79BF004E273C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE524CE79BF004E273C /* AppDelegate.swift */; };
 		31AC7AE824CE79BF004E273C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE724CE79BF004E273C /* SceneDelegate.swift */; };
 		31AC7AEA24CE79BF004E273C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE924CE79BF004E273C /* ViewController.swift */; };
@@ -80,6 +82,8 @@
 		3131875F24D2BB7300843AE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3131876224D2D46700843AE4 /* lottie (3).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie (3).json"; sourceTree = "<group>"; };
 		3131876424D2DA5100843AE4 /* AllIMageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIMageModel.swift; sourceTree = "<group>"; };
+		31799C2024DD4B52007A73C7 /* CourseHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeViewController.swift; sourceTree = "<group>"; };
+		31799C2224DD4B81007A73C7 /* ComminityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComminityViewController.swift; sourceTree = "<group>"; };
 		31AC7AE224CE79BF004E273C /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AC7AE524CE79BF004E273C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AC7AE724CE79BF004E273C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +257,15 @@
 			path = libraries;
 			sourceTree = "<group>";
 		};
+		31799C1F24DD4B0E007A73C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				31799C2024DD4B52007A73C7 /* CourseHomeViewController.swift */,
+				31799C2224DD4B81007A73C7 /* ComminityViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		31AC7AD924CE79BE004E273C = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +341,7 @@
 		31C59C1A24DBE7CC000ED742 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				31799C1F24DD4B0E007A73C7 /* Controller */,
 				31C59C1B24DBE7CC000ED742 /* Model */,
 			);
 			path = Course;
@@ -577,6 +591,7 @@
 				31AC7AEA24CE79BF004E273C /* ViewController.swift in Sources */,
 				31AC7B2324CEB440004E273C /* BaseViewController.swift in Sources */,
 				31C59C1924DBE2DD000ED742 /* BannerModel.swift in Sources */,
+				31799C2124DD4B52007A73C7 /* CourseHomeViewController.swift in Sources */,
 				3131874E24D2B3E400843AE4 /* Common.swift in Sources */,
 				31C59C1D24DBE7E8000ED742 /* CourseHeaderModel.swift in Sources */,
 				3131876524D2DA5100843AE4 /* AllIMageModel.swift in Sources */,
@@ -587,6 +602,7 @@
 				31AC7AE624CE79BF004E273C /* AppDelegate.swift in Sources */,
 				3131874624D2AAF700843AE4 /* HomeFunctionView.swift in Sources */,
 				3131874824D2ABEC00843AE4 /* HomeCourseTableViewCell.swift in Sources */,
+				31799C2324DD4B81007A73C7 /* ComminityViewController.swift in Sources */,
 				3131875C24D2BB1900843AE4 /* ProfileHwader.swift in Sources */,
 				3131874424D2AAA400843AE4 /* HomeHeaderView.swift in Sources */,
 				3131875224D2B41E00843AE4 /* TSNetworkRequest.swift in Sources */,

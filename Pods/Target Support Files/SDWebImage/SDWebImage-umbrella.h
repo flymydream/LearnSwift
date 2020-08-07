@@ -10,7 +10,6 @@
 #endif
 #endif
 
-
 #import "NSButton+WebCache.h"
 #import "NSData+ImageContentType.h"
 #import "NSImage+Compatibility.h"

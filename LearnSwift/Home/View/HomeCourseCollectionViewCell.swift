@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import SnapKit
 
 class HomeCourseCollectionViewCell: UICollectionViewCell {
     
@@ -18,10 +20,74 @@ class HomeCourseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initialiseUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    //首页
+    var model : HomeInstitutionsModel? {
+        didSet {
+            let url = URL(string: kImage_Url+(model?.banner_img_change?.image ?? ""))
+            mainImg.kf.setImage(with: url)
+            titleLab.text = model?.title
+            lableLab.text = model?.institutiontags
+            priceLab.isHidden = true
+        }
+        
+    }
+    
+    
+    func setPassData(model:HomeLessonModel) {
+        priceLab.isHidden = false
+        let url = URL(string: kImage_Url+(model.banner_img_change!.image))
+        mainImg.kf.setImage(with: url)
+        titleLab.text = model.title
+        lableLab.text = model.lessontags
+        labButton.backgroundColor = kVALUE_RGB(rgbValue: 0xE68E00)
+        labButton.setTitle("精品", for: .normal)
+        let price_str = model.total_price!
+        if Float(price_str)! > 0 {
+            priceLab.text = "¥"+model.total_price!
+        } else {
+            priceLab.text = "¥"+model.single_price!
+        }
+    }
+    //课程
+    func setPassCourseData(model:CourseHeaderLessonsHotModel) {
+        priceLab.isHidden = false
+        let url = URL(string: kImage_Url+(model.banner_img_change!.image))
+        mainImg.kf.setImage(with: url)
+        titleLab.text = model.title
+        lableLab.text = model.lessonsTags
+        labButton.backgroundColor = kVALUE_RGB(rgbValue: 0xE68E00)
+        let price_str = model.total_price!
+        if Float(price_str)! > 0 {
+            priceLab.text = "$"+model.total_price!
+        } else {
+            priceLab.text = "$"+model.single_price!
+        }
+        
+        
+    }
+    //个人中心
+    func setPassPrifileLesson(model:ProfileLikeModel) {
+        priceLab.isHidden = false
+        let url = URL(string: kImage_Url+(model.banner_img_change!.image))
+        mainImg.kf.setImage(with: url)
+        titleLab.text = model.title
+        lableLab.text = model.lessontags
+        labButton.backgroundColor = kVALUE_RGB(rgbValue: 0xE68E00)
+        labButton.setTitle("精品", for: .normal)
+        let price_str = model.total_price!
+        if Float(price_str)! > 0 {
+            priceLab.text = "$"+model.total_price!
+        } else {
+            priceLab.text = "$"+model.single_price!
+        }
     }
     
     
@@ -69,6 +135,20 @@ class HomeCourseCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(22*HEI)
             make.right.equalTo(0)
         }
+        
+        priceLab.text = "¥2640.00"
+        priceLab.font = UIFont.init(name: DINMedium, size: 16)
+        priceLab.textColor = kVALUE_RGB(rgbValue: 0xD45C3B)
+        self.addSubview(priceLab)
+        priceLab.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(lableLab.snp.bottom).offset(20*HEI)
+            make.height.equalTo(32*HEI)
+            make.right.equalTo(0)
+        }
+        
+        
+        
         
         
     }
