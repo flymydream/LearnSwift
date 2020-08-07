@@ -10,59 +10,56 @@ import UIKit
 import Lottie
 import SnapKit
 
-protocol HomeHeaderViewDelegate {
+@objc protocol HomeHeaderViewDelegate {
     
-    func homeHeaderFunctionClick(view:HomeHeaderView,index:NSInteger)
+   @objc func homeHeaderFunctionClick(view:HomeHeaderView,index:NSInteger)
     //轮播图事件
-    func homeBannerClick(view:HomeHeaderView,index:NSInteger)
+   @objc func homeBannerClick(view:HomeHeaderView,index:NSInteger)
     
-    func homeCePingClick()
+   @objc func homeCePingClick()
     
 }
 
 
 class HomeHeaderView: UIView,SDCycleScrollViewDelegate,HomeFunctionViewDelegate {
-       
     var bannerView = SDCycleScrollView()
     let animationView = AnimationView()
-    
-    var delegate:HomeHeaderViewDelegate?
+    weak var delegate:HomeHeaderViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialiseUI()
     }
-    
+       
+    //数据绑定
+     var model : HomeModel {
+         didSet {
+             let imageArr = NSMutableArray()
+             let arr:Array<AllIMageModel> = model.bannersModel!.banner_imgs_change!
+             for index in 0..< arr.count {
+                 let bannerModel : AllIMageModel = arr[index]
+                 let image_url : String = kImage_Url+bannerModel.image
+                 imageArr.add(image_url)
+             }
+            self.bannerView.imageURLStringsGroup = imageArr.copy() as? [Any]
+         }
+     }
+   
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //数据绑定
-    var model : HomeModel {
-        didSet {
-            let  
-            
-            
-            
-        }
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-       
+ 
+
     func HomeFunctionClick(view: HomeFunctionView, index: NSInteger) {
         self.delegate?.homeHeaderFunctionClick(view: self, index: index)
     }
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
         self.delegate?.homeBannerClick(view: self, index: index)
     }
+    @objc func cepingCilck() {
+        self.delegate?.homeCePingClick()
+    }
     
 
-    
     func initialiseUI() {
         self.bannerView = SDCycleScrollView()
         self.bannerView.frame = CGRect(x: 0, y: 0, width: kSCREEN_WIDTH, height: 422*HEI)
@@ -103,13 +100,6 @@ class HomeHeaderView: UIView,SDCycleScrollViewDelegate,HomeFunctionViewDelegate 
             make.bottom.equalTo(-30*HEI)
             make.height.equalTo(10*HEI)
         }
-        
-        
-        
-        func cepingCilck() {
-            self.delegate?.homeCePingClick()
-        }
-        
         
     }
     

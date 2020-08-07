@@ -9,10 +9,10 @@
 import UIKit
 
 class AllIMageModel: NSObject {
-    var type : String
-    var intro : String
-    var URL : String
-    var image : String
+    var type : String = ""
+    var intro : String = ""
+    var URL : String = ""
+    var image : String = ""
 
     func mj_replacedKeyFromPropertyName() -> [AnyHashable : Any]! {
         return ["URL" : "url"]

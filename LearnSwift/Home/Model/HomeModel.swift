@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+public
 class HomeModel: NSObject {
 
     var student_right_top_title : String?
@@ -17,7 +17,7 @@ class HomeModel: NSObject {
     var lessons : Array<HomeLessonModel>?
     
     //因为有子model数据,需要重写如下方法
-    override func mj_keyValuesDidFinishConvertingToObject() {
+     func mj_didConvertToObjectWithKeyValues() {
         if self.institutions != nil {
             let list = HomeInstitutionsModel.mj_objectArray(withKeyValuesArray: self.institutions)
             if list != nil {
@@ -40,7 +40,7 @@ class HomeBannerArrModel: NSObject {
     var banner_imgs : String?
     var title : String?
     //因为有子model数据,需要重写如下方法
-    override func mj_keyValuesDidFinishConvertingToObject() {
+     func mj_didConvertToObjectWithKeyValues() {
         if self.banner_imgs_change != nil {
             let list = AllIMageModel.mj_objectArray(withKeyValuesArray: self.banner_imgs_change)
             if list != nil {
