@@ -1,9 +1,9 @@
 //
 //  TSNetworkRequest.swift
-//  LearnSwift
+//  TSPractice-Switf
 //
-//  Created by 庞宏侠 on 2020/7/30.
-//  Copyright © 2020 jiuhuikeji. All rights reserved.
+//  Created by Feng on 2018/9/14.
+//  Copyright © 2018年 Feng. All rights reserved.
 //
 
 import UIKit
