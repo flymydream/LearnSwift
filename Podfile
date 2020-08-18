@@ -7,6 +7,9 @@ pod 'SDCycleScrollView'
 pod 'lottie-ios'
 pod 'SnapKit'
 pod 'MJRefresh'
+pod 'ObjectMapper'
+pod 'Moya'
+pod 'SwiftyUserDefaults'
 
 
 target 'LearnSwift' do

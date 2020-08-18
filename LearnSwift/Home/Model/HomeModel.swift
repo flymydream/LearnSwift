@@ -7,7 +7,48 @@
 //
 
 import UIKit
-public
-class HomeModel: NSObject {
+import ObjectMapper
+
+class HomeModel: BaseDataModel {
+    var miningLevel = ""
+    var account = ""
+    var powerBTCModel : PowerBTCModel?
+    var powerPMEERModel : PowerPMEERModel?
+    
+    required  init?(map: Map) {
+           super.init(map: map)
+    }
+    override func mapping(map: Map) {
+          super.mapping(map: map)
+          miningLevel <- map["miningLevel"]
+          account <- map["account"]
+          powerBTCModel <- map["BTC"]
+          powerPMEERModel <- map["PMEER"]
+    }
+}
+
+class PowerBTCModel: HomeModel {
+    var countCalculationPower = ""
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    override func mapping(map: Map) {
+         super.mapping(map: map)
+         countCalculationPower <- map["countCalculationPower"]
+    }
+}
+class PowerPMEERModel: HomeModel {
+    
+    var countCalculationPower = ""
+    required init?(map: Map) {
+         super.init(map: map)
+    }
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        countCalculationPower <- map["countCalculationPower"]
+    }
 
 }
+
+

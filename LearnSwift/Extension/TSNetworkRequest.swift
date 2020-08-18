@@ -19,17 +19,15 @@ class TSNetworkRequest: NSObject {
     }
 }
 
-extension TSNetworkRequest{
-    func GetRequest(UrlString:String,params:[String:Any]?,success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
+extension TSNetworkRequest {
+    func getRequest(UrlString:String,params:[String:Any]?,success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
         let PathUrl = BASE_URL+UrlString
-        let headers: HTTPHeaders = [
-            "token" : getAccessToken(),
-            "eityin-app" : "appios",
-            "eityin-lang" : "zh",
-            "api-version" : "v1001",
-            "telephone" : getPhone(),
-            "uuid" : getDevUuid()
-        ]
+        let headers : HTTPHeaders = ["authorization" : "11670_d36518dc2e124f448df68cbdde7128cf","Content-Type" : "application/json"]
+//        let tokenStr : String?
+//        tokenStr = UserDefaults.standard.value(forKey: KToken) as? String
+//        if tokenStr != nil {
+//           headers = ["authorization" : tokenStr!]
+//        }
         print("请求参数:url=\(PathUrl)\n header=\(headers)\nparameters=\(String(describing: params))\n")
         Alamofire.request(PathUrl, method: .get, parameters: params,headers: headers).responseJSON { (response) in
             switch response.result{
@@ -40,7 +38,7 @@ extension TSNetworkRequest{
                     let code:Int = json["code"] .int!
                     if code == 200 {
                         success(value)
-                    }else if code == 1000000 {
+                    }else if code == 401 {
                         showError(error: "登陆被挤")
                     }else{
                         let str:String = json["message"] .string!
@@ -59,16 +57,14 @@ extension TSNetworkRequest{
     
     
     //paramer mark===post请求 =
-    func PostRequest(UrlString:String,paramer:[String:Any],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()){
+    func postRequest(UrlString:String,paramer:[String:Any]?,success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()){
         let PathUrl = BASE_URL+UrlString
-        let headers: HTTPHeaders = [
-            "token" : getAccessToken(),
-            "eityin-app" : "appios",
-            "eityin-lang" : "zh",
-            "api-version" : "v1001",
-            "telephone" : getPhone(),
-            "uuid" : getDevUuid()
-        ]
+        let headers : HTTPHeaders = ["authorization" : "11670_d36518dc2e124f448df68cbdde7128cf","Content-Type" : "application/json"]
+//        let tokenStr : String?
+//        tokenStr = UserDefaults.standard.value(forKey: KToken) as? String
+//        if tokenStr != nil {
+//           headers = ["authorization" : tokenStr!]
+//        }
         print("请求参数:url=\(PathUrl)\n header=\(headers)\nparameters=\(String(describing: paramer))\n")
         Alamofire.request(PathUrl, method: .post, parameters: paramer, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             switch response.result{
@@ -80,7 +76,7 @@ extension TSNetworkRequest{
                     if code == 200 {
                         success(value)
                         
-                    }else if code == 1000000 {
+                    }else if code == 401 {
                         showError(error: "登陆被挤")
                     }else{
                         let str:String = json["message"] .string!
@@ -100,6 +96,7 @@ extension TSNetworkRequest{
     func upLoadImageRequest(UrlString:String,params:[String:String],data:[Data],name:[String],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()){
         let headers = ["content-type":"multipart/form-data"]
         let PathUrl = BASE_URL+UrlString
+        
         Alamofire.upload(multipartFormData: { (multipartforData) in
             let flag = params["flag"]
             let userId = params["userId"]

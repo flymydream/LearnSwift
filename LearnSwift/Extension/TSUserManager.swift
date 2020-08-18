@@ -51,7 +51,7 @@ func hasLogined() ->Bool {
 }
 //MARK: 获取个人相关信息
 func getAccessToken() -> String {
-    return (getUserInfo().token != nil) ? getUserInfo().token! :" "
+    return UserDefaults.standard.value(forKey: KToken) as! String
 }
 func getPhone() -> String {
     return (getUserInfo().telephone != nil) ? getUserInfo().telephone! :" "

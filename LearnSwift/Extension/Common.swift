@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 
-let BASE_URL = "https:bayin888.bayinyq.com/"
-let kImage_Url = "http://oss-master.bayinyq.com/imgs/"
+let BASE_URL = "https://test.ubhome.pro/api/"
 
 //屏幕宽高
 let kSCREEN_WIDTH = UIScreen.main.bounds.width
@@ -25,6 +24,11 @@ let kNavBarH: CGFloat = 44.0
 let kStatusNavH:CGFloat = kStatusBarH+kNavBarH
 let kTabBarH:CGFloat = (UIApplication.shared.statusBarFrame.size.height > 20.0 ? 83.0:49.0)
 let kBottomH:CGFloat = kIs_iPhoneX ? 34 : 0
+
+
+
+let KToken = "userToken"
+let KDefaults = UserDefaults.standard
 
 //MARK:DIN字体 + 苹方字体
 let DINRegular = "DIN-Regular"
@@ -53,10 +57,10 @@ let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 //let AMPMAPKEY =  "69e62e42684bf503ae551533f11d6662"
 
 
-//let kMainBGColcr = kVALUE_RGB(rgbValue: 0x71DBE0)
-//let kMainLinkColor = kRGB(R: 206, G: 206, B: 206)
-//let TSMainTextColor = kRGB(R: 109, G: 115, B: 119)
-//let TSMainSubTextColor = kRGB(R: 136, G: 145, B: 151)
+let kMainBGColcr = kVALUE_RGB(rgbValue: 0x71DBE0)
+let kMainLinkColor = kRGB(R: 206, G: 206, B: 206)
+let MainTextColor = kRGB(R: 109, G: 115, B: 119)
+let MainSubTextColor = kRGB(R: 136, G: 145, B: 151)
 //颜色(rgb,16进制value)
 func kRGBA(R:CGFloat,G:CGFloat,B:CGFloat,A:CGFloat) -> UIColor{
     return UIColor.init(red: R/255.0, green: G/255.0, blue: B/255.0, alpha: A)

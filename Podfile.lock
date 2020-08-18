@@ -6,6 +6,13 @@ PODS:
   - lottie-ios (3.1.8)
   - MJExtension (3.2.2)
   - MJRefresh (3.4.3)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - ObjectMapper (4.2.0)
+  - Result (4.1.0)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.8.3):
@@ -14,6 +21,7 @@ PODS:
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
+  - SwiftyUserDefaults (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
@@ -21,10 +29,13 @@ DEPENDENCIES:
   - lottie-ios
   - MJExtension
   - MJRefresh
+  - Moya
+  - ObjectMapper
   - SDCycleScrollView
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
+  - SwiftyUserDefaults
 
 SPEC REPOS:
   trunk:
@@ -33,11 +44,15 @@ SPEC REPOS:
     - lottie-ios
     - MJExtension
     - MJRefresh
+    - Moya
+    - ObjectMapper
+    - Result
     - SDCycleScrollView
     - SDWebImage
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
+    - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -45,12 +60,16 @@ SPEC CHECKSUMS:
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
 
-PODFILE CHECKSUM: f1a4c321dcca73049d8f7d92904778aac5d2b410
+PODFILE CHECKSUM: 30e16248d4f47a5e5803e9d7dde164fc9c9274c5
 
 COCOAPODS: 1.9.1

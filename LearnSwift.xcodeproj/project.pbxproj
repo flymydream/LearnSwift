@@ -28,6 +28,10 @@
 		31B90F5524E4EA9E00ABB871 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B90F5424E4EA9E00ABB871 /* MineViewController.swift */; };
 		31B90F5724E4EABF00ABB871 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B90F5624E4EABF00ABB871 /* CommunityViewController.swift */; };
 		31B90F5924E4EAD500ABB871 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B90F5824E4EAD500ABB871 /* NewsViewController.swift */; };
+		31B90F5B24E544A200ABB871 /* RuestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B90F5A24E544A200ABB871 /* RuestUrl.swift */; };
+		31B90F5D24E54BC300ABB871 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B90F5C24E54BC300ABB871 /* HomeTableViewCell.swift */; };
+		31DB80A924EB7051008FA9E0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB80A824EB7050008FA9E0 /* Service.swift */; };
+		31DB80AB24EB7D0B008FA9E0 /* BaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB80AA24EB7D0B008FA9E0 /* BaseDataModel.swift */; };
 		70E09C1101248EADD5DF0B12 /* Pods_LearnSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3B1FC742072C087532C641 /* Pods_LearnSwift.framework */; };
 		A648610397532307A3AE1534 /* Pods_LearnSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322EDC05D3408AF7BB312B /* Pods_LearnSwiftTests.framework */; };
 		B27C84074F82B155EBC75108 /* Pods_LearnSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE998CBE7FE2DA84B829BF6D /* Pods_LearnSwiftUITests.framework */; };
@@ -79,6 +83,10 @@
 		31B90F5424E4EA9E00ABB871 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		31B90F5624E4EABF00ABB871 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		31B90F5824E4EAD500ABB871 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		31B90F5A24E544A200ABB871 /* RuestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuestUrl.swift; sourceTree = "<group>"; };
+		31B90F5C24E54BC300ABB871 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		31DB80A824EB7050008FA9E0 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		31DB80AA24EB7D0B008FA9E0 /* BaseDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataModel.swift; sourceTree = "<group>"; };
 		3DAE8C2D3D90B109FA7A6B9A /* Pods-LearnSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSwift.release.xcconfig"; path = "Target Support Files/Pods-LearnSwift/Pods-LearnSwift.release.xcconfig"; sourceTree = "<group>"; };
 		5A3B1FC742072C087532C641 /* Pods_LearnSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		695FACFC912AEE732E213F1B /* Pods-LearnSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-LearnSwiftUITests/Pods-LearnSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 		3131873024D2A97300843AE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31B90F5C24E54BC300ABB871 /* HomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +183,8 @@
 		3131874C24D2B3C000843AE4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				31DB80A824EB7050008FA9E0 /* Service.swift */,
+				31DB80AA24EB7D0B008FA9E0 /* BaseDataModel.swift */,
 				3173236924E240BF006166D0 /* TSNetworkRequest.swift */,
 				3131874D24D2B3E400843AE4 /* Common.swift */,
 				3131874F24D2B3FE00843AE4 /* DataManager.swift */,
@@ -216,6 +227,7 @@
 		31AC7AE424CE79BF004E273C /* LearnSwift */ = {
 			isa = PBXGroup;
 			children = (
+				31B90F5A24E544A200ABB871 /* RuestUrl.swift */,
 				31AC7AE524CE79BF004E273C /* AppDelegate.swift */,
 				31B90F4424E4E90500ABB871 /* MainTabbarViewController.swift */,
 				31B90F4224E4E90500ABB871 /* BaseNavViewController.swift */,
@@ -582,14 +594,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31DB80AB24EB7D0B008FA9E0 /* BaseDataModel.swift in Sources */,
 				31B90F4624E4E90500ABB871 /* BaseViewController.swift in Sources */,
 				3131875424D2B45600843AE4 /* TSInfoModel.swift in Sources */,
 				31B90F4724E4E90500ABB871 /* MainTabbarViewController.swift in Sources */,
 				31B90F5524E4EA9E00ABB871 /* MineViewController.swift in Sources */,
 				3131874E24D2B3E400843AE4 /* Common.swift in Sources */,
+				31B90F5B24E544A200ABB871 /* RuestUrl.swift in Sources */,
+				31B90F5D24E54BC300ABB871 /* HomeTableViewCell.swift in Sources */,
 				3131875824D2B48100843AE4 /* PageModel.swift in Sources */,
 				3173236A24E240BF006166D0 /* TSNetworkRequest.swift in Sources */,
 				31B90F4524E4E90500ABB871 /* BaseNavViewController.swift in Sources */,
+				31DB80A924EB7051008FA9E0 /* Service.swift in Sources */,
 				31B90F5724E4EABF00ABB871 /* CommunityViewController.swift in Sources */,
 				3131875024D2B3FE00843AE4 /* DataManager.swift in Sources */,
 				31AC7AE624CE79BF004E273C /* AppDelegate.swift in Sources */,
