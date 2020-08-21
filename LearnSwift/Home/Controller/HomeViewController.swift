@@ -32,14 +32,12 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
             print("json=\(json)")
             let baseString = Mapper<BaseDataModel>().map(JSONString: json as! String)
             if baseString?.code == 200 {
-                self.dataArray = Mapper<HomeModel>().mapArray(JSONObject: baseString?.data)!
-            
-//                if let model = Mapper<HomeModel>().mapArray(JSONObject: baseString?.data){
-//                    self.dataArray.append(contentsOf: model)
-//                }
-//                if let model = Mapper<HomeModel>().map(JSONObject: baseString?.data) {
-//                    self.dataArray.append(model)
-//                }
+                if let array = baseString?.data as? [AnyObject] {
+                    for homeModel in array {
+                        let model = Mapper<HomeModel>().map(JSONObject: homeModel)
+                        self.dataArray.append(model!)
+                    }
+                }
                 self.tableView.reloadData()
             }
         }) {(error) in
@@ -52,7 +50,8 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
       
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
+        let cell : HomeTableViewCell! = (tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell)!
+        cell.selectionStyle = .none
         if indexPath.row < self.dataArray.count {
             let model = self.dataArray[indexPath.row]
             cell.setPassModel(model: model)

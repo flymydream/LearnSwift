@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="LearnSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_icon" translatesAutoresizingMaskIntoConstraints="NO" id="llR-lV-oxn">
+                        <rect key="frame" x="6" y="0.0" width="12" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="Oe9-jR-a7s"/>
+                            <constraint firstAttribute="width" constant="12" id="wbO-dY-lxt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020年-03月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA9-yb-vDk">
+                        <rect key="frame" x="24" y="-2" width="93.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81H-RF-EYd">
+                        <rect key="frame" x="24" y="26" width="327" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事实上很少说话少说话少说话少说话少江苏省经济数据收集今生今世睡觉睡觉就睡觉睡觉就是今生今世睡觉就睡觉睡觉就睡觉睡觉就是今生今世" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AX-xm-7OJ">
+                        <rect key="frame" x="24" y="57.5" width="327" height="54"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSZ-LB-Gcm">
+                        <rect key="frame" x="271" y="138" width="80" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="eHd-yb-1kt"/>
+                            <constraint firstAttribute="width" constant="80" id="qDN-O1-lM9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <state key="normal" title="分享" image="share_green_icon">
+                            <color key="titleColor" red="0.38823529411764707" green="0.74117647058823533" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="clickShareButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nDG-df-w7s"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-B0-Qye">
+                        <rect key="frame" x="12" y="14" width="0.5" height="164"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="Wya-MB-NtX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5AX-xm-7OJ" firstAttribute="leading" secondItem="81H-RF-EYd" secondAttribute="leading" id="5di-dg-GAV"/>
+                    <constraint firstAttribute="trailing" secondItem="81H-RF-EYd" secondAttribute="trailing" constant="24" id="8oV-sa-ff8"/>
+                    <constraint firstItem="JSZ-LB-Gcm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5AX-xm-7OJ" secondAttribute="bottom" constant="10" id="Nkq-T0-f2V"/>
+                    <constraint firstItem="5AX-xm-7OJ" firstAttribute="top" secondItem="81H-RF-EYd" secondAttribute="bottom" constant="10" id="NnX-nF-ubT"/>
+                    <constraint firstItem="81H-RF-EYd" firstAttribute="top" secondItem="YA9-yb-vDk" secondAttribute="bottom" constant="10" id="Wvk-tK-WRH"/>
+                    <constraint firstItem="YA9-yb-vDk" firstAttribute="centerY" secondItem="llR-lV-oxn" secondAttribute="centerY" id="XKg-ux-PR7"/>
+                    <constraint firstItem="81H-RF-EYd" firstAttribute="leading" secondItem="YA9-yb-vDk" secondAttribute="leading" id="ZLY-B4-Rhl"/>
+                    <constraint firstAttribute="trailing" secondItem="5AX-xm-7OJ" secondAttribute="trailing" constant="24" id="a9V-rP-zjC"/>
+                    <constraint firstItem="llR-lV-oxn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="bVq-id-CcM"/>
+                    <constraint firstItem="YA9-yb-vDk" firstAttribute="leading" secondItem="llR-lV-oxn" secondAttribute="trailing" constant="6" id="bfN-0D-AMj"/>
+                    <constraint firstAttribute="bottom" secondItem="Z0k-B0-Qye" secondAttribute="bottom" id="d5m-tR-BJK"/>
+                    <constraint firstAttribute="trailing" secondItem="JSZ-LB-Gcm" secondAttribute="trailing" constant="24" id="gCN-ZY-y5y"/>
+                    <constraint firstAttribute="bottom" secondItem="JSZ-LB-Gcm" secondAttribute="bottom" constant="15" id="o80-lX-2b2"/>
+                    <constraint firstItem="Z0k-B0-Qye" firstAttribute="centerX" secondItem="llR-lV-oxn" secondAttribute="centerX" id="rnW-PF-QVQ"/>
+                    <constraint firstItem="Z0k-B0-Qye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="ru3-HZ-W4q"/>
+                    <constraint firstAttribute="trailing" secondItem="JSZ-LB-Gcm" secondAttribute="trailing" constant="24" id="tiu-2r-d2t"/>
+                    <constraint firstItem="llR-lV-oxn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xyf-uv-hxV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="detailLabel" destination="5AX-xm-7OJ" id="5nA-NT-G4Y"/>
+                <outlet property="timeLabel" destination="YA9-yb-vDk" id="FjN-xT-MKc"/>
+                <outlet property="titleLabel" destination="81H-RF-EYd" id="HhY-Gm-o6C"/>
+            </connections>
+            <point key="canvasLocation" x="65.94202898550725" y="111.83035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="info_icon" width="14" height="14"/>
+        <image name="share_green_icon" width="13" height="12"/>
+    </resources>
+</document>

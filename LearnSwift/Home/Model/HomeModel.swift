@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class HomeModel: BaseDataModel {
-    var miningLevel = ""
-    var account = ""
+    var miningLevel : Int?
+    var account : String?
     var powerBTCModel : PowerBTCModel?
     var powerPMEERModel : PowerPMEERModel?
     
@@ -28,7 +28,7 @@ class HomeModel: BaseDataModel {
 }
 
 class PowerBTCModel: HomeModel {
-    var countCalculationPower = ""
+    var countCalculationPower : Float?
     
     required init?(map: Map) {
         super.init(map: map)
@@ -40,7 +40,7 @@ class PowerBTCModel: HomeModel {
 }
 class PowerPMEERModel: HomeModel {
     
-    var countCalculationPower = ""
+    var countCalculationPower : Float?
     required init?(map: Map) {
          super.init(map: map)
     }

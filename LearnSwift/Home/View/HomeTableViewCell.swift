@@ -34,6 +34,7 @@ class HomeTableViewCell: UITableViewCell {
         titleLabel = UILabel.init()
         self.contentView.addSubview(titleLabel)
         titleLabel.textAlignment = .left
+        titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         titleLabel.textColor = MainTextColor
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(15)
@@ -43,9 +44,10 @@ class HomeTableViewCell: UITableViewCell {
         subTitleLabel = UILabel.init()
         self.contentView.addSubview(subTitleLabel)
         subTitleLabel.textAlignment = .left
+        subTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         subTitleLabel.textColor = MainSubTextColor
         subTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp_bottomMargin).offset(5)
+            make.top.equalTo(titleLabel.snp_bottomMargin).offset(10)
             make.left.equalTo(titleLabel)
         }
         
@@ -74,7 +76,6 @@ class HomeTableViewCell: UITableViewCell {
        levelImageView.snp.makeConstraints { (make) in
            make.top.equalTo(titleLabel.snp_bottomMargin).offset(2)
            make.right.equalTo(-15)
-           make.width.equalTo(90)
            make.height.equalTo(20)
        }
         
@@ -82,11 +83,11 @@ class HomeTableViewCell: UITableViewCell {
     
     func setPassModel(model:HomeModel) {
         let btcNum = model.powerBTCModel?.countCalculationPower
-        titleLabel.text = "BTC团队总算力:\(btcNum ?? "")T"
+        titleLabel.text = "BTC团队总算力:\(btcNum ?? 0)T"
         
         let pmeerNum = model.powerPMEERModel?.countCalculationPower
-        subTitleLabel.text = "PMEER团队总算力:\(pmeerNum ?? "")G"
+        subTitleLabel.text = "PMEER团队总算力:\(pmeerNum ?? 0)G"
         
-        levelImageView.image = UIImage(named: "level_\(model.miningLevel)")
+        levelImageView.image = UIImage(named: "level_\(model.miningLevel ?? 0)")
     }
 }
