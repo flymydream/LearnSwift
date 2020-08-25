@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 
-let BASE_URL = "https://test.ubhome.pro/api/"
-
 //屏幕宽高
 let kSCREEN_WIDTH = UIScreen.main.bounds.width
 let kSCREEN_HEIGHT = UIScreen.main.bounds.height

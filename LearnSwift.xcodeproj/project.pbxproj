@@ -18,6 +18,10 @@
 		3131875E24D2BB3E00843AE4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3131875D24D2BB3E00843AE4 /* HomeModel.swift */; };
 		3142F85324EF79FE0071467C /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142F85224EF79FE0071467C /* CourseModel.swift */; };
 		3142F85524EF9E260071467C /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 3142F85424EF9E260071467C /* city.json */; };
+		3142F85824F366B00071467C /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142F85624F366B00071467C /* CourseCollectionViewCell.swift */; };
+		3142F85924F366B00071467C /* CourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142F85724F366B00071467C /* CourseCollectionViewCell.xib */; };
+		3142F85F24F369940071467C /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142F85D24F369940071467C /* CourseTableViewCell.swift */; };
+		3142F86024F369940071467C /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142F85E24F369940071467C /* CourseTableViewCell.xib */; };
 		31AC7AE624CE79BF004E273C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE524CE79BF004E273C /* AppDelegate.swift */; };
 		31AC7AE824CE79BF004E273C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE724CE79BF004E273C /* SceneDelegate.swift */; };
 		31AC7AED24CE79C0004E273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AC7AEB24CE79C0004E273C /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		3131875D24D2BB3E00843AE4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		3142F85224EF79FE0071467C /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		3142F85424EF9E260071467C /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		3142F85624F366B00071467C /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		3142F85724F366B00071467C /* CourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		3142F85D24F369940071467C /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		3142F85E24F369940071467C /* CourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
 		31AC7AE224CE79BF004E273C /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AC7AE524CE79BF004E273C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AC7AE724CE79BF004E273C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +350,10 @@
 		31B90F4F24E4EA1300ABB871 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3142F85624F366B00071467C /* CourseCollectionViewCell.swift */,
+				3142F85724F366B00071467C /* CourseCollectionViewCell.xib */,
+				3142F85D24F369940071467C /* CourseTableViewCell.swift */,
+				3142F85E24F369940071467C /* CourseTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,8 +512,10 @@
 				31073F3E24EE52CD00C97662 /* CommunityViewController.xib in Resources */,
 				31AC7AF224CE7A19004E273C /* LaunchScreen.storyboard in Resources */,
 				31AC7AEF24CE7A19004E273C /* Assets.xcassets in Resources */,
+				3142F86024F369940071467C /* CourseTableViewCell.xib in Resources */,
 				31D5342324ED19A6006DBFC0 /* NewsTableViewCell.xib in Resources */,
 				31AC7AED24CE79C0004E273C /* Main.storyboard in Resources */,
+				3142F85924F366B00071467C /* CourseCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +634,7 @@
 				31B90F5524E4EA9E00ABB871 /* MineViewController.swift in Sources */,
 				3131874E24D2B3E400843AE4 /* Common.swift in Sources */,
 				31D5342524ED2304006DBFC0 /* NewsModel.swift in Sources */,
+				3142F85F24F369940071467C /* CourseTableViewCell.swift in Sources */,
 				31B90F5B24E544A200ABB871 /* RuestUrl.swift in Sources */,
 				31B90F5D24E54BC300ABB871 /* HomeTableViewCell.swift in Sources */,
 				31D5342224ED19A6006DBFC0 /* NewsTableViewCell.swift in Sources */,
@@ -632,6 +647,7 @@
 				3131875E24D2BB3E00843AE4 /* HomeModel.swift in Sources */,
 				3131875624D2B46A00843AE4 /* TSUserManager.swift in Sources */,
 				3131873E24D2A98500843AE4 /* HomeViewController.swift in Sources */,
+				3142F85824F366B00071467C /* CourseCollectionViewCell.swift in Sources */,
 				31B90F5924E4EAD500ABB871 /* NewsViewController.swift in Sources */,
 				31073F3D24EE52CD00C97662 /* CommunityViewController.swift in Sources */,
 			);

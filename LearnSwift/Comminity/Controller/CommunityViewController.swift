@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
-class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate {
-
+import ObjectMapper
+class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
+   
     
     @IBOutlet var headView: UIView!
     @IBOutlet weak var bannerView: UIView!
     var sdScrollView = SDCycleScrollView()
-    var bannerArray = [BannerImgChangeModel]()
+    var bannerArray = [InstitutionIdChangeModel]()
+    var institusionArray = [InstitutionsModel]()
+    var lessaonsArray = [InstitutionsModel]()
     
     
     @IBOutlet weak var testBankView: UIButton!
@@ -22,21 +24,47 @@ class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initSDView()
-        
+        getListData()
     }
 
     func getListData() {
-        
-        let path = Bundle.main.path(forResource: "city", ofType: "json")
-        if let pathStr = path {
-            let data = Data.init(contentsOf: URL.init(fileURLWithPath: pathStr)) {
-                print("pathStr有问题")
+        PNetwork.request(target: .courseList, success: { (json) in
+          let baseString = Mapper<BaseDataModel>().map(JSONString: json as! String)
+          if baseString?.code == 200 {
+            let courseModel = Mapper<CourseModel>().map(JSONObject: baseString?.data)
+            if courseModel != nil {
+                self.institusionArray = courseModel!.institutions
+                self.lessaonsArray  = courseModel!.lessons
             }
-            let array = JSONSerialization.jsonObject(with: data, options: .allowFragments)
+//            self.sdScrollView.imageURLStringsGroup =
+            self.tableView.reloadData()
         }
+      }) {(error) in
+          print("error=\(error)")
+      }
+        
        
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+       
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell : CourseTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell") as? CourseTableViewCell
+          cell.selectionStyle = .none
+        if let lesson : [InstitutionsModel] = lessaonsArray {
+            cell.setLessonArray(num: lesson)
+        } else {
+            print("数组中出错")
+        }
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     
+         return 195
+    }
+
     
     func initSDView() {
         //底部view
@@ -55,7 +83,10 @@ class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate {
         
         self.testBankView.frame = CGRect(x: 0, y: 300, width: kSCREEN_WIDTH, height: 100)
         self.headView.addSubview(self.testBankView)
- 
+        
+        self.tableView.tableHeaderView = self.headView
+        tableView.register(UINib.init(nibName: "CourseTableViewCell", bundle: nil), forCellReuseIdentifier: "CourseTableViewCell")
+        
     }
 
     @IBAction func clickFunctionButton(_ sender: UIButton) {
