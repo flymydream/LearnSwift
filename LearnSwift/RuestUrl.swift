@@ -12,7 +12,7 @@ public
 
 let BASE_URL = "https:bayin888.bayinyq.com/"
 //let BASE_URL = "http://api.bayinyq.com/"
-let kImage_Url = "http://oss-master.bayinyq.com/imgs/"
+let kImageUrl = "http://oss-master.bayinyq.com/imgs/"
 
 /**算力排行*/
 let URL_toptenReviews = "mining/toptenReviews"

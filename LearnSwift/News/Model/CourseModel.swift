@@ -59,7 +59,7 @@ class InstitutionsModel: CourseModel {
           institutiontags <- map["institutiontags"]
           honor_introduce <- map["honor_introduce"]
           title <- map["title"]
-          institutionIdChange <- map["banner_img_change"]
+          institutionIdChange <- map["institution_id_change"]
        }
     
 }

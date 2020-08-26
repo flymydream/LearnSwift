@@ -14,7 +14,7 @@ class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate,UITa
     @IBOutlet var headView: UIView!
     @IBOutlet weak var bannerView: UIView!
     var sdScrollView = SDCycleScrollView()
-    var bannerArray = [InstitutionIdChangeModel]()
+    var bannerArray = [String]()
     var institusionArray = [InstitutionsModel]()
     var lessaonsArray = [InstitutionsModel]()
     
@@ -31,13 +31,22 @@ class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate,UITa
         PNetwork.request(target: .courseList, success: { (json) in
           let baseString = Mapper<BaseDataModel>().map(JSONString: json as! String)
           if baseString?.code == 200 {
-            let courseModel = Mapper<CourseModel>().map(JSONObject: baseString?.data)
-            if courseModel != nil {
-                self.institusionArray = courseModel!.institutions
-                self.lessaonsArray  = courseModel!.lessons
+            if let courseModel = Mapper<CourseModel>().map(JSONObject: baseString?.data) {
+                if let array = courseModel.bannersModel?.bannerImgsChangeModel  {
+                        for tempModel in array {
+                            let imageUrl : String = "\(kImageUrl)\(tempModel.image)"
+                            self.bannerArray.append(imageUrl)
+                        }
+                     self.sdScrollView.imageURLStringsGroup = self.bannerArray
+                  }
+                for tempModel in courseModel.institutions {
+                    self.institusionArray.append(tempModel)
+                }
+                for tempModel in courseModel.lessons {
+                    self.lessaonsArray.append(tempModel)
+                }
+                 self.tableView.reloadData()
             }
-//            self.sdScrollView.imageURLStringsGroup =
-            self.tableView.reloadData()
         }
       }) {(error) in
           print("error=\(error)")
@@ -52,7 +61,7 @@ class CommunityViewController: BaseViewController,SDCycleScrollViewDelegate,UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell : CourseTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell") as? CourseTableViewCell
           cell.selectionStyle = .none
-        if let lesson : [InstitutionsModel] = lessaonsArray {
+        if let lesson : [InstitutionsModel] = institusionArray {
             cell.setLessonArray(num: lesson)
         } else {
             print("数组中出错")

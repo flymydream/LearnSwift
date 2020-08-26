@@ -20,9 +20,7 @@ class CourseTableViewCell: UITableViewCell,UICollectionViewDelegateFlowLayout,UI
     }
     func setLessonArray(num: Array<InstitutionsModel>) {
         lessonArray = num
-        if num.count > 0 {
-             collectionView.reloadData()
-        }
+        collectionView.reloadData()
     }
 
    func createUIView() {
@@ -31,22 +29,29 @@ class CourseTableViewCell: UITableViewCell,UICollectionViewDelegateFlowLayout,UI
          layout.scrollDirection = .horizontal
          layout.minimumLineSpacing = 20*HEI
          layout.sectionInset = UIEdgeInsets.init(top: 0, left: 30*HEI, bottom: 0, right: 30*HEI)
-         collectionView? = UICollectionView.init(frame: CGRect(x: 0*HEI, y: 54*HEI, width: kSCREEN_WIDTH, height: 330*HEI), collectionViewLayout: layout)
-        collectionView?.register(UINib.init(nibName: "CourseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CourseCollectionViewCell")
+         collectionView.delegate = self
+         collectionView.dataSource = self
+         collectionView.collectionViewLayout = layout
+         collectionView.register(UINib.init(nibName: "CourseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CourseCollectionViewCell")
      }
+    
+      func numberOfSections(in collectionView: UICollectionView) -> Int {
+          return 1
+      }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           self.lessonArray.count
        }
        
        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
         let cell : CourseCollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCollectionViewCell", for: indexPath) as! CourseCollectionViewCell
-          if indexPath.row < self.lessonArray.count  {
+        if indexPath.row < self.lessonArray.count  {
               let model = self.lessonArray[indexPath.row]
-              cell.setPassModel(model: model)
-          }
+            cell.setPassModel(model: model)
+        }
           return cell
-       }
+     }
+
        
     
 }
