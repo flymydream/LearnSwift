@@ -63,26 +63,21 @@ struct PNetwork {
 
 // 定义请求方法
 enum Service {
+    //登录
+    case userLogin(account:String,password:String)//app登录
     //排行列表
     case toptenReviews
     //资讯列表
     case advisory
-    //课程列表
-    case courseList
+  
+    
     
 }
 
 extension Service: TargetType {
     //请求服务器的根路径
     var baseURL: URL {
-      switch self {
-      case.courseList:
-         return URL(string: formalHostCourse)!
-      case .toptenReviews:
-        return URL(string: baseHost)!
-      case .advisory:
-        return URL(string: baseHost)!
-      }
+         return URL(string: baseHost)!
     }
     //每个API对应的具体路径
     var path: String {
@@ -91,9 +86,8 @@ extension Service: TargetType {
             return "mining/toptenReviews"
         case .advisory:
             return "checkin/advisory"
-        case .courseList:
-             return "api/index/index"
-            
+        case .userLogin(account: _, password: _):
+             return "user/login"
         }
     }
     //各个接口的请求方式，get或post
@@ -101,25 +95,25 @@ extension Service: TargetType {
         switch self {
         case .toptenReviews, .advisory:
             return .post
-        case .courseList:
-            return .get
+        case .userLogin:
+            return .post
             
         }
     }
     //单元测试使用
     var sampleData: Data {
         switch self {
-        case .toptenReviews, .advisory,.courseList:
+        case .toptenReviews, .advisory,.userLogin:
             return "just for test".utf8Encoded
         }
     }
     //请求是否携带参数
     var task: Task {
         switch self {
-        case .toptenReviews, .advisory,.courseList:// Send no parameters
+        case .toptenReviews, .advisory:// Send no parameters
             return .requestPlain
-//        case .appCheckAPP(let appChannelValue,let appVersion):
-//            return .requestData(bodyEncrypt(params: ["appChannelValue": appChannelValue,"appVersion": appVersion]))
+        case .userLogin(let account, let password):
+            return .requestParameters(parameters :["account": account,"password":password], encoding: URLEncoding.default)
         }
     }
     //请求头
@@ -132,6 +126,7 @@ extension Service: TargetType {
         }
         return ["Content-type":"application/json","authorization":token!]
     }
+  
 }
 
 //utf8编码

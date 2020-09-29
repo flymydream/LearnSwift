@@ -25,9 +25,9 @@ class MainTabbarViewController: UITabBarController {
         secondVC.title = "资讯"
         self.setTabbarItem(title: "资讯", size: 10, selectedImage: "icon_tab bars_course_sel", normalImage: "icon_tab bars_course_nor",clildVC: secondVC)
 
-        let cartVC = CommunityViewController()
-        cartVC.title = "社区"
-        self.setTabbarItem(title: "社区", size: 10, selectedImage: "icon_tab bars_community_sel", normalImage: "icon_tab bars_community_nor",clildVC: cartVC)
+        let cartVC = MarketViewController()
+        cartVC.title = "行情"
+        self.setTabbarItem(title: "行情", size: 10, selectedImage: "icon_tab bars_community_sel", normalImage: "icon_tab bars_community_nor",clildVC: cartVC)
 
         let profileVC = MineViewController()
         profileVC.title = "个人中心"
