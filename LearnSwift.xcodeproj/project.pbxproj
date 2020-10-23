@@ -23,6 +23,8 @@
 		3181D25725369C9C006BDF96 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181D25025369C9C006BDF96 /* Service.swift */; };
 		3181D25825369C9C006BDF96 /* TSUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181D25125369C9C006BDF96 /* TSUserManager.swift */; };
 		3181D25925369C9C006BDF96 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181D25225369C9C006BDF96 /* Common.swift */; };
+		31A81DEA253D7D9800A751A4 /* VertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A81DE9253D7D9800A751A4 /* VertificationView.swift */; };
+		31A81DEC253D7F8D00A751A4 /* VertificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A81DEB253D7F8D00A751A4 /* VertificationView.xib */; };
 		31AC7AE624CE79BF004E273C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC7AE524CE79BF004E273C /* AppDelegate.swift */; };
 		31AC7AED24CE79C0004E273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AC7AEB24CE79C0004E273C /* Main.storyboard */; };
 		31AC7AEF24CE7A19004E273C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31AC7AEE24CE7A19004E273C /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		3181D25025369C9C006BDF96 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3181D25125369C9C006BDF96 /* TSUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUserManager.swift; sourceTree = "<group>"; };
 		3181D25225369C9C006BDF96 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		31A81DE9253D7D9800A751A4 /* VertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertificationView.swift; sourceTree = "<group>"; };
+		31A81DEB253D7F8D00A751A4 /* VertificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VertificationView.xib; sourceTree = "<group>"; };
 		31AC7AE224CE79BF004E273C /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AC7AE524CE79BF004E273C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AC7AEC24CE79C0004E273C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 			children = (
 				31782DC52521B8DA005E0955 /* LoginViewController.swift */,
 				31782DC62521B8DA005E0955 /* LoginViewController.xib */,
+				31A81DE9253D7D9800A751A4 /* VertificationView.swift */,
+				31A81DEB253D7F8D00A751A4 /* VertificationView.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A81DEC253D7F8D00A751A4 /* VertificationView.xib in Resources */,
 				3142F85524EF9E260071467C /* city.json in Resources */,
 				31AC7AF224CE7A19004E273C /* LaunchScreen.storyboard in Resources */,
 				31782DC82521B8DA005E0955 /* LoginViewController.xib in Resources */,
@@ -650,6 +657,7 @@
 				3181D25625369C9C006BDF96 /* BaseDataModel.swift in Sources */,
 				3181D25825369C9C006BDF96 /* TSUserManager.swift in Sources */,
 				31D5342524ED2304006DBFC0 /* NewsModel.swift in Sources */,
+				31A81DEA253D7D9800A751A4 /* VertificationView.swift in Sources */,
 				31B90F5B24E544A200ABB871 /* RuestUrl.swift in Sources */,
 				3181D25325369C9C006BDF96 /* DataManager.swift in Sources */,
 				31EB457525355D4D00283496 /* MineTableViewCell.swift in Sources */,

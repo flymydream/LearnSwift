@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - CryptoSwift (1.3.2)
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
+  - CryptoSwift
   - Kingfisher
   - lottie-ios
   - MJExtension
@@ -40,6 +42,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CryptoSwift
     - Kingfisher
     - lottie-ios
     - MJExtension
@@ -56,6 +59,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CryptoSwift: 093499be1a94b0cae36e6c26b70870668cb56060
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
 
-PODFILE CHECKSUM: 30e16248d4f47a5e5803e9d7dde164fc9c9274c5
+PODFILE CHECKSUM: e00b5d8ac5d995343fcc5d9519262fb5b7b0213f
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

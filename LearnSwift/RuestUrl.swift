@@ -28,3 +28,6 @@ let URL_personalCenter = "user/personalCenter"
 
 /**登录*/
 let URL_login = "user/login"
+
+let secrectKey = "0CoJUm6Qyw8W8jud"
+
